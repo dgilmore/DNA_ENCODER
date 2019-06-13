@@ -4,6 +4,8 @@
 
 * This assessment was built using create-react-app, semantic-react-ui and javascript.
 
+* Visit: https://dna-app.davidgilmoreinnis.now.sh/ to test out my solutions. 
+
 * In the project directory, the src folder contains the files I created for the task, including:
 
 ## Encode.js
