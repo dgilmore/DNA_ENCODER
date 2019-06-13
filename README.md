@@ -8,6 +8,9 @@
 
 * In the project directory, the src folder contains the files I created for the task, including:
 
+## App.js
+* This file has the menu and menu logic. I supplied a pretty simplistic routing routine for this small of a project. 
+
 ## Encode.js
 * Objective 1 & 2
 
