@@ -26,6 +26,6 @@
 
 ## What I didn't get accomplished
 
-* I did not complete objective 5 in the 24 hour period, but I believe with just a little more time and research I would have come to a solution. I believe a recursive solution would be the most cleanest and most efficient. 
+* I did not complete objective 5 in the 24 hour period, but I believe with just a little more time and research I would have come to a solution. I believe a recursive solution would be the cleanest and most efficient. 
 
-* Testing. I would have liked to run unit tests on all of my components before I submitted. I found some edge cases by naturally testing. 
+* Testing. With more time I would have liked to run unit tests on all of my components using tools such as Enzyme or Jest. 
