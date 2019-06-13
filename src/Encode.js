@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Segment, Form} from 'semantic-ui-react'
+import {Segment, Form, Header} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 export default class Encode extends Component {
     constructor() {
@@ -16,6 +16,7 @@ export default class Encode extends Component {
     this.setState({value: event.target.value})
   }
 
+  /*convert binary value to DNA sequence*/
   encodeDNA = (arr) => {
    var dna = ''
     for(var j = 0; j < arr.length; j++){
@@ -41,7 +42,7 @@ export default class Encode extends Component {
    }
    return dna
   }
-
+  /*find ascii value of each char, convert to binary and call DNA convesion func*/
   convertBinary = (input) => {
     var dna = ''
     for(var i = 0; i < input.length; i++){
@@ -77,7 +78,8 @@ export default class Encode extends Component {
       <Segment>
         <div className="asciiForm">
             <Form onSubmit={this.handleSubmit}>
-             <h1>ASCII STRING TO CONVERT</h1>
+             <Header as="h1">ASCII STRING TO CONVERT</Header>
+             <Header as="h5">Note: You must resubmit if toggled after results produced.</Header>
              <Form.Input placeholder='ASCII STRING' size="big" value={this.state.value} onChange={this.handleChange} />
              <Form.Group inline>
                 <Form.Radio

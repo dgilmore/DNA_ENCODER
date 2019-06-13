@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Encode from './Encode'
 import Substrings from './Substrings'
+import Mapping from './Mapping'
 import {Menu} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import './App.css';
@@ -8,13 +9,25 @@ import './App.css';
 export default class App extends Component {
   constructor(){
     super()
-    this.state = {}
+    this.state = {
+      activeItem: 'encode'
+    }
     
   }
 
 handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
 render() {
+  let Display
+  if(this.state.activeItem === 'encode'){
+    Display = <Encode />
+  }
+  else if(this.state.activeItem === 'substrings'){
+    Display = <Substrings/>
+  }
+  else { 
+    Display = <Mapping/>
+  }
   const { activeItem } = this.state
   return (
     <div className="App">
@@ -34,14 +47,14 @@ render() {
         </Menu.Item>
 
         <Menu.Item
-          name='decode'
-          active={activeItem === 'decode'}
+          name='mapping'
+          active={activeItem === 'mapping'}
           onClick={this.handleItemClick}
         >
-          Decode
+          Mapping 
         </Menu.Item>
       </Menu>
-      <Substrings />
+      { Display }
     </div>
   );
  }
