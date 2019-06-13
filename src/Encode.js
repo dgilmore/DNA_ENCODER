@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-
+import React, { Component } from 'react'
+import {Segment, Form} from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css'
 export default class Encode extends Component {
     constructor() {
       super()
       this.state = {
         value: '',
         DNA: '',
-        isDNA: true,
-        isRNA: false
+        type: 'DNA'
       }
     }
   
@@ -30,7 +30,7 @@ export default class Encode extends Component {
           dna += 'C'
           break
         case '11':
-          if(this.state.isDNA) {
+          if(this.state.type === 'DNA') {
              dna += 'T'
           } else {
             dna += 'U'
@@ -69,53 +69,40 @@ export default class Encode extends Component {
     this.setState({DNA: this.convertBinary(input)})
   }
 
-  handleRadio = (event) => {
-    if(event.target.name === 'DNA'){
-      this.setState({isDNA: true, isRNA: false})
-    } else {
-      this.setState({isRNA: true, isDNA: false})
-    }
-    console.log(this.state.isDNA + " " + this.state.isRNA)
-  }
+  handleRadio = (e, { value }) => this.setState({ type: value })
   
   render() {
     return (
-      <div className="wrapper">
+    <div className="wrapper">
+      <Segment>
         <div className="asciiForm">
-       <form onSubmit={this.handleSubmit}>
-          <label>
-            ASCII STRING TO CONVERT 
-          <input type="text" value={this.state.value} onChange={this.handleChange}/>
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-        <div className="form-check">
-          <label>
-            <input
-              type="radio"
-              name="DNA"
-              checked={this.state.isDNA}
-              onChange={this.handleRadio}
-            />
-            DNA
-          </label>
+            <Form onSubmit={this.handleSubmit}>
+             <h1>ASCII STRING TO CONVERT</h1>
+             <Form.Input placeholder='ASCII STRING' size="big" value={this.state.value} onChange={this.handleChange} />
+             <Form.Group inline>
+                <Form.Radio
+                  label="DNA"
+                  name="DNA"
+                  value="DNA"
+                  checked={this.state.type === 'DNA'}
+                  onChange={this.handleRadio}
+                />
+                <Form.Radio
+                  label ="RNA"
+                  name="RNA"
+                  value="RNA"
+                  checked={this.state.type === 'RNA'}
+                  onChange={this.handleRadio}
+                />
+              </Form.Group>
+              <Form.Button type="submit" value="Submit" color="green">SUBMIT</Form.Button>
+           </Form>
+        </div>
+          <div className="dnaResponse">
+             { this.state.DNA === '' ? <h1> </h1> : <h1>{this.state.DNA}</h1> }
           </div>
-          <div className="form-check">
-          <label>
-            <input
-              type="radio"
-              name="RNA"
-              checked={this.state.isRNA}
-              onChange={this.handleRadio}
-            />
-            RNA
-          </label>
-        </div>
-        </div>
-        <div className="dnaResponse">
-          { this.state.DNA === '' ? <h1> </h1> : <h1>{this.state.DNA}</h1> }
-        </div>
-      </div>
+      </Segment>
+    </div>
     );
    }
   }
