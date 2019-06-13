@@ -8,9 +8,6 @@
 
 * In the project directory, the src folder contains the files I created for the task, including:
 
-## App.js
-* This file has the menu and menu logic. I supplied a pretty simplistic routing routine for this small of a project. 
-
 ## Encode.js
 * Objective 1 & 2
 
@@ -28,6 +25,9 @@
 * This file first maps the user supplied DNA sequence to its complimentary strand. From there it loops through the sequence 4 characters at a time, converting the 4 char chunks into binary strings. Once in binary form, the string is converted to a decimal value and lastly mapped to its ascii character.
 
 * Because of lack of time, I assumed that users would only enter proper DNA sequences in Capital letter form. 
+
+## App.js
+* This file has the menu and menu logic. I supplied a pretty simplistic routing routine for this small of a project.
 
 ## What I didn't get accomplished
 
