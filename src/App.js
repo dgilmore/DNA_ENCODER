@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Encode from './Encode'
+import Substrings from './Substrings'
 import {Menu} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import './App.css';
@@ -40,7 +41,7 @@ render() {
           Decode
         </Menu.Item>
       </Menu>
-      <Encode />
+      <Substrings />
     </div>
   );
  }
