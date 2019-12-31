@@ -6,6 +6,9 @@
 
 * Visit: https://dna-app.davidgilmoreinnis.now.sh/ to test out my solutions. 
 
+* The app's dependencies are create-react-app and semnatic-react-ui. To build this project locally, you'll need to clone this
+  repo, use yarn to add create-react-app and semantic-react-ui. Then run yarn build. 
+
 * In the project directory, the src folder contains the files I created for the task, including:
 
 ## Encode.js
